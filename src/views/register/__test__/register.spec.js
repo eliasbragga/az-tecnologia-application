@@ -1,7 +1,7 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Register from "../index.vue";
 import Vuex from "vuex";
-import loginVuex from "@/store/login";
+import loginVuex from "@/store/application";
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
