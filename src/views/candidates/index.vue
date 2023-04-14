@@ -1,6 +1,6 @@
 <template>
   <div class="header_container">
-    <UserDataTable :total="total" @changePagination="changePagination"/>
+    <UserDataTable  @changePagination="changePagination"/>
   </div>
 </template>
 
@@ -14,11 +14,9 @@ export default {
   components: {
     UserDataTable,
   },
-  data: () => ({
-    total: 0,
-  }),
+  data: () => ({}),
   computed: {
-    ...mapGetters(["pagination"]),
+    ...mapGetters(["pagination", "logout"]),
   },
   methods: {
     ...mapMutations(["SET_CANDIDATES", "SET_LOGOUT"]),
