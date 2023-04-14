@@ -16,6 +16,7 @@
           <div class="input_container">
             <label for="usuario">E-mail</label>
             <input
+              data-jest="input_user_register_email"
               :disabled="loadingField"
               v-model="form.inputBind"
               autocomplete="off"
@@ -28,6 +29,7 @@
           <div class="input_container">
             <label for="senha">Senha</label>
             <input
+              data-jest="input_user_register_password"
               :disabled="loadingField"
               v-model="form.passwordBind"
               placeholder="Informe senha"
@@ -44,8 +46,9 @@
             Voltar
           </button>
           <button
+            data-jest="button_user_register"
             :disabled="loadingField"
-            @click="handleClick"
+            @click.prevent="handleClick"
             class="button_send"
             :class="loadingField ? 'inactive' : 'active'"
           >
@@ -101,17 +104,17 @@
           (this.messageToast = "Cadastro realizado com sucesso. Faça o login");
       },
   
-      async handleClick(e) {
-        e.preventDefault();
+      async handleClick() {
         this.loadingField = true;
         try {
-          console.log('sa')
-          const response = await UserRegister({
+          const promise = UserRegister({
             email: this.form.inputBind,
             password: this.form.passwordBind,
-          });
+          }); 
+          const response = await promise
           this.sucessRegisterMessage()
           this.clearForm()
+          return promise
         } catch (error) {
           this.failedRegisterMessage();
           console.log(error);
