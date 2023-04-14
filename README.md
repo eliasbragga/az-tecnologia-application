@@ -45,6 +45,10 @@ npm run test:e2e
 
 ![Alt text](src/assets/screens-ui/table-table-screen.jpg?raw=true "Screenshot")
 
+**Cards Phone Screen**
+
+![Alt text](src/assets/screens-ui/cards-phone-screen.jpg?raw=true "Screenshot")
+
 
 **Add Candidate**
 
