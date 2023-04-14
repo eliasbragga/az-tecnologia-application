@@ -136,8 +136,9 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-  .info {
-    font-size: 90%;
+  .info span{
+    font-size: 12px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.322);
   }
 }
 </style>
