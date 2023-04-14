@@ -39,12 +39,14 @@
           />
         </div>
         <div class="input_container">
-          <span @click="redirectRoute('/register')" class="register">Registrar-se</span>
+          <span @click="redirectRoute('/register')" class="register"
+            >Registrar-se</span
+          >
         </div>
         <button
           data-jest="button_user_login"
           :disabled="loadingField"
-          @click="handleClick"
+          @click.prevent="handleClick"
           class="button_send"
           :class="loadingField ? 'inactive' : 'active'"
         >
@@ -96,8 +98,7 @@ export default {
         (this.messageToast = "Dados Inválidos. Por favor, tente novamente");
     },
 
-    async handleClick(e) {
-      e.preventDefault();
+    async handleClick() {
       this.loadingField = true;
       this.setDatasToVuex();
       try {
@@ -236,11 +237,11 @@ p {
   cursor: pointer;
 }
 .active {
-  transition: .3s;
+  transition: 0.3s;
   background: #0067a5;
 }
 .active:hover {
-  transition: .3s;
+  transition: 0.3s;
   background: #004d7c;
 }
 .inactive {
@@ -252,10 +253,10 @@ p {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.582);
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 .register:hover {
-  transition: .3s;
+  transition: 0.3s;
   color: rgba(0, 0, 0, 0.774);
 }
 @media screen and (max-width: 600px) {
