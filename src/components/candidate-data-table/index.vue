@@ -77,12 +77,6 @@ export default {
     CardMobile,
     Pagination,
   },
-  props: {
-    total: {
-      required: true,
-      type: Number,
-    },
-  },
   data: () => ({}),
   computed: {
     ...mapGetters(["candidates", "pagination"]),
