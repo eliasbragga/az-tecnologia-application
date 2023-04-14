@@ -31,11 +31,9 @@ describe("Login.vue - Unit", () => {
     const senha = "123456";
     await wrapper.find("[data-jest='input_user_email']").setValue(email);
     await wrapper.find("[data-jest='input_user_password']").setValue(senha);
-    await wrapper.find("[data-jest='button_user_login']").trigger('click');
+    await wrapper.find("[data-jest='button_user_login']").trigger("click");
     await wrapper.vm.$nextTick();
 
-    // wrapper.vm.setDatasToVuex();
-    
     expect(wrapper.vm.user).toBe(email);
     expect(wrapper.vm.password).toBe(senha);
   });
