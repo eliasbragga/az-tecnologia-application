@@ -16,6 +16,7 @@
         <div class="input_container">
           <label for="usuario">Usuário</label>
           <input
+            data-jest="input_user_email"
             :disabled="loadingField"
             v-model="form.inputBind"
             autocomplete="off"
@@ -28,6 +29,7 @@
         <div class="input_container">
           <label for="senha">Senha</label>
           <input
+            data-jest="input_user_password"
             :disabled="loadingField"
             v-model="form.passwordBind"
             placeholder="Informe senha"
@@ -40,6 +42,7 @@
           <span @click="redirectRoute('/register')" class="register">Registrar-se</span>
         </div>
         <button
+          data-jest="button_user_login"
           :disabled="loadingField"
           @click="handleClick"
           class="button_send"
