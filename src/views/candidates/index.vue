@@ -7,10 +7,10 @@
 <script>
 import UserDataTable from "@/components/candidate-data-table/index.vue";
 import { mapGetters, mapMutations } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Candidates",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     UserDataTable,
   },

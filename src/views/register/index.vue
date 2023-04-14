@@ -62,10 +62,10 @@
   <script>
 import MessageAlert from "@/components/message-alert/index.vue";
 import { UserRegister } from "@/services/register";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Register",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     MessageAlert,
   },

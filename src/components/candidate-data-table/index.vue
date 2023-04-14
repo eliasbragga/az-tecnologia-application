@@ -66,10 +66,10 @@ import ActionUser from "@/components/popups/action-candidate.vue";
 import CardMobile from "@/components/card-candidate-mobile/index.vue";
 import Pagination from "@/components/pagination/index.vue";
 import { mapGetters } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "UserDataTable",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     DeleteButton,
     ActionUser,

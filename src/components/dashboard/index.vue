@@ -33,10 +33,10 @@
 <script>
 import routes from '@/router'
 import { mapGetters, mapMutations } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Dashboard",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {},
   data: () => ({
     routes: routes.options.routes.filter(route => route.meta)

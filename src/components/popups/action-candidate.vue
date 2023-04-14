@@ -70,10 +70,10 @@ import {
   updateCandidate,
   createCandidate,
 } from "@/services/candidates";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "ActionUser",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {},
   props: {
     id: {

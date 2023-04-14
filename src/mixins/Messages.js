@@ -1,6 +1,6 @@
 import { getCandidates } from "@/services/candidates";
 import { mapGetters, mapMutations } from "vuex";
-const MyMixin = {
+const Messages = {
   data: () => ({
     showMessage: false,
     successReq: false,
@@ -49,4 +49,4 @@ const MyMixin = {
   },
 };
 
-export default MyMixin;
+export default Messages;

@@ -61,10 +61,10 @@
 import MessageAlert from "@/components/message-alert/index.vue";
 import { UserLogin } from "@/services/login";
 import { mapMutations, mapGetters } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Login",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     MessageAlert,
   },

@@ -36,10 +36,10 @@
 <script>
 import Inputhamburger from "@/components/input-hamburger/index.vue";
 import { mapMutations } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Header",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: { Inputhamburger },
   data: () => ({
     userName: "Az Tecnologia",

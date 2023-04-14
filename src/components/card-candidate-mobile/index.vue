@@ -50,11 +50,11 @@
 import MessageAlert from "@/components/message-alert/index.vue";
 import DeleteButton from "@/components/popups/alert-delete.vue";
 import ActionUser from "@/components/popups/action-candidate.vue";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 import { mapGetters } from "vuex";
 export default {
   name: "CardCandidateMobile",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     DeleteButton,
     ActionUser,
