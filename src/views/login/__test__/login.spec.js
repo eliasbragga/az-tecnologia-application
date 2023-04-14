@@ -1,5 +1,6 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Login from "../index.vue";
+import axios from "axios";
 import Vuex from "vuex";
 import loginVuex from "@/store/login";
 
@@ -36,5 +37,20 @@ describe("Login.vue - Unit", () => {
 
     expect(wrapper.vm.user).toBe(email);
     expect(wrapper.vm.password).toBe(password);
+  });
+  it.only("should set the values of data ​​to vuex  ", async () => {
+    const token = "QpwL5tke4Pnpja7X4";
+    axios.interceptors.request.use(() => {
+      return {
+        token: "QpwL5tke4Pnpja7X4",
+      };
+    });
+    const email = "eve.holt@reqres.in";
+    const password = "123456";
+    await wrapper.find("[data-jest='input_user_email']").setValue(email);
+    await wrapper.find("[data-jest='input_user_password']").setValue(password);
+    await wrapper.vm.handleClick();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.token).toBe(token);
   });
 });
