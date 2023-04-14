@@ -1,12 +1,7 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Login from "../index.vue";
-import axios from "axios";
 import Vuex from "vuex";
 import loginVuex from "@/store/login";
-import MockAdapter from "axios-mock-adapter";
-import router from "@/router/index";
-
-// Crie uma nova instância do MockAdapter
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
