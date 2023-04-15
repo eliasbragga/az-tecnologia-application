@@ -1,6 +1,6 @@
 <template>
   <div class="header_container">
-    <UserDataTable  @changePagination="changePagination"/>
+    <UserDataTable  ref="UserDataTable"/>
   </div>
 </template>
 
@@ -20,10 +20,6 @@ export default {
   },
   methods: {
     ...mapMutations(["SET_CANDIDATES", "SET_LOGOUT"]),
-    changePagination() {
-      this.page = this.pagination;
-      this.getCandidates(this.pagination);
-    },
   },
   mounted() {
     this.SET_LOGOUT(false);
@@ -45,6 +41,6 @@ export default {
 
 .header_container {
   width: 100%;
-  height: 97%; 
+  height: 97%;
 }
 </style>
