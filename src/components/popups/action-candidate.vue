@@ -1,6 +1,7 @@
 <template>
   <div>
     <button
+      data-jest="button_open_dialog_create"
       @click="openDialog"
       v-if="!edit"
       :class="widthWindow <= 960 ? 'button_add_user_mobile' : 'button_add_user'"
@@ -15,7 +16,7 @@
       <div class="overlay"></div>
       <div class="card">
         <div class="title_card">
-          <span @click="closeDialog" class="close_dialog">&times;</span>
+          <span data-jest="close_dialog_icon" @click="closeDialog" class="close_dialog">&times;</span>
           <p>{{ id ? "Editar Candidato" : "Adicionar Candidato" }}</p>
         </div>
         <div class="data_container">
@@ -23,6 +24,7 @@
             <div class="input_container">
               <label for="usuario">Nome <span class="asterisk">*</span></label>
               <input
+                data-jest='input_user_name'
                 v-model="form.name"
                 :disabled="loadingField"
                 autocomplete="off"
@@ -35,6 +37,7 @@
             <div class="input_container">
               <label for="senha">Vaga <span class="asterisk">*</span></label>
               <input
+              data-jest='input_user_job'
                 v-model="form.job"
                 :disabled="loadingField"
                 placeholder="Informe vaga"
@@ -48,10 +51,11 @@
         </div>
         <hr />
         <div class="button_container">
-          <button @click="closeDialog" class="button_send back_button_color">
+          <button @click="closeDialog" class="button_send back_button_color" data-jest="button_back">
             Voltar
           </button>
           <button
+            data-jest="button_handleClick"
             @click="id ? updateCandidate() : createCandidate()"
             :class="loadingField ? 'inactive' : ''"
             :disabled="loadingField"
