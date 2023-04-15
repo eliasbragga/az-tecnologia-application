@@ -1,9 +1,10 @@
 <template>
   <div>
     <MessageAlert
-      :showMessage="showMessage"
-      :message="messageToast"
-      :successReq="successReq"
+      ref="messageAlert" 
+      :showMessage="showMessage ? true : false"
+      :message="messageToast ? messageToast : ''"
+      :successReq="successReq ? true : false"
       @closeToastMessage="closeToastMessage"
     />
     <div class="card_container" v-for="(candidate, i) in candidates" :key="i">
@@ -32,11 +33,13 @@
       </div>
       <div class="button_container">
         <ActionUser
+          ref="ActionUser"
           @messageToast="messageToastHandle"
           :edit="true"
           :id="candidate.id"
         />
         <DeleteButton
+        ref="DeleteButton"
           @messageToast="messageToastHandle"
           :id="candidate.id"
           :name="candidate.first_name"
@@ -64,7 +67,6 @@ export default {
   computed: {
     ...mapGetters(["candidates"]),
   },
-  methods: {},
 };
 </script>
 
