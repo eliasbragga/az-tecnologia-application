@@ -1,13 +1,22 @@
 <template>
   <div>
-    <button @click="dialog = true" class="delete_button">
+    <button
+      data-jest="button_open_dialog"
+      @click="dialog = true"
+      class="delete_button"
+    >
       <span>🗑️</span>
     </button>
     <div v-if="dialog">
       <div class="overlay"></div>
       <div class="card">
         <div class="title_card">
-          <span @click="closeDialog" class="close_dialog">&times;</span>
+          <span
+            data-jest="close_dialog_icon"
+            @click="closeDialog"
+            class="close_dialog"
+            >&times;</span
+          >
           <p>Exclusão Candidato</p>
         </div>
         <div class="data_container">
@@ -19,8 +28,22 @@
         </div>
         <hr />
         <div class="button_container">
-          <button :disabled="loadingField" @click="closeDialog" class="button_action cancel_button_color">Cancelar</button>
-          <button :disabled="loadingField" @click="handleClick" class="button_action delete_button_color">Excluir</button>
+          <button
+            data-jest="button_closeDialog"
+            :disabled="loadingField"
+            @click="closeDialog"
+            class="button_action cancel_button_color"
+          >
+            Cancelar
+          </button>
+          <button
+            data-jest="button_handleClick"
+            :disabled="loadingField"
+            @click="handleClick"
+            class="button_action delete_button_color"
+          >
+            Excluir
+          </button>
         </div>
       </div>
     </div>
@@ -37,39 +60,35 @@ export default {
     },
     name: {
       required: true,
-      type: String
-    }
+      type: String,
+    },
   },
   data: () => ({
     dialog: false,
-    loadingField: false
+    loadingField: false,
   }),
   methods: {
-    closeToastMessage(event) {
-      this.showMessage = event
-    },
     closeDialog() {
-      this.dialog = false
+      this.dialog = false;
     },
 
     async handleClick() {
       try {
-        this.loadingField = true
-          const response = await deleteCandidate(this.id);
-          this.closeDialog()
-          // emitindo funcao para componente de tabela
-          this.$emit('messageToast', {
-            messageToast: 'Exclusão realizada com sucesso',
-            successReq: true,
-            showMessage: true
-          })
+        this.loadingField = true;
+        const response = await deleteCandidate(this.id);
+        this.closeDialog();
+        // emitindo funcao para componente de tabela
+        this.$emit("messageToast", {
+          messageToast: "Exclusão realizada com sucesso",
+          successReq: true,
+          showMessage: true,
+        });
       } catch (error) {
-        this.showMessage = true
+        this.showMessage = true;
         console.log(error);
       } finally {
         this.loadingField = false;
       }
-      
     },
   },
 };
@@ -89,12 +108,16 @@ export default {
   border-radius: 6px;
   box-shadow: 0px 3px 6px;
   padding-bottom: 1.5rem;
-  animation: fadeOut .3s ease forwards;
+  animation: fadeOut 0.3s ease forwards;
 }
 
 @keyframes fadeOut {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Estilos para o botão de fechar */
@@ -175,10 +198,10 @@ export default {
 }
 .cancel_button_color {
   background: #0067a5;
-  transition: .3s;
+  transition: 0.3s;
 }
 .cancel_button_color:hover {
-  transition: .3s;
+  transition: 0.3s;
   background: #005081;
 }
 .cancel_button_color:hover:active {
@@ -188,11 +211,11 @@ export default {
   background: transparent;
   border: 1px solid #949494 !important;
   color: #949494;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .delete_button_color:hover {
-  transition: .3s;
+  transition: 0.3s;
   background: #dddddd;
   border: 1px solid #949494 !important;
   color: #949494;
@@ -214,7 +237,6 @@ hr {
   border: none;
   background: transparent;
   cursor: pointer;
-
 }
 
 @media screen and (max-width: 960px) {
