@@ -1,7 +1,7 @@
 <template>
   <div class="header_mobile">
     <div class="header_hamburger">
-      <button class="btn_hamburger" @click="openHamburger">
+      <button data-jest="button_open_hamburger" class="btn_hamburger" @click="openHamburger">
         <span class="line_hamburger"></span>
         <span class="line_hamburger"></span>
         <span class="line_hamburger"></span>
@@ -10,7 +10,7 @@
         <div class="card_hamburger" v-if="hamburgerOptionVisibility">
           <span>Ola, {{ userName }}</span>
           <button @click="redirectRoute(route.path)" v-for="(route, i) in routes" :key="i" class="btn_candidatos_hamburger">{{ route.meta.name }}</button>
-          <button class="btn_candidatos_hamburger logout" @click="toGoLogout">
+          <button data-jest="button_logout" class="btn_candidatos_hamburger logout" @click="toGoLogout">
             Logout
           </button>
         </div>
@@ -21,7 +21,7 @@
 
 <script>
 import routes from '@/router'
-import { mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: "InputHamburger",
   data: () => ({
@@ -29,6 +29,9 @@ export default {
     hamburgerOptionVisibility: false,
     userName: "Az Tecnologia",
   }),
+  computed: {
+    ...mapGetters(['logout'])
+  },
   methods: {
     ...mapMutations(['SET_LOGOUT']),
     openHamburger() {
