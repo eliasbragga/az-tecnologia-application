@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Login from "@/views/login/index.vue";
 import Register from "@/views/register/index.vue";
 import Candidates from "@/views/candidates/index.vue";
-import addCandidate from "@/components/add-candidate/index.vue";
+import addCandidate from "@/components/candidate-add/index.vue";
 
 Vue.use(VueRouter);
 
