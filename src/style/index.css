@@ -1,0 +1,24 @@
+:root {
+    --primary-color: #005c94;
+    --primary-color-hover:#015183;
+    --primary-color-active:#014169;
+    --background-card:#0066a56b;
+    --border-light-grey:#7474748f !important;
+    --light-grey:#626262 !important;
+    --light-grey-hover:#c0c0c0 !important;
+    --dark-grey: #8e8e8e !important;
+    --white-color:#ffff;
+    --black-color:black;
+    --error-color:red;
+    --success-color:#53a653;
+    --placeholder-color:#00000059;
+    --box-shadow:rgba(0, 0, 0, 0.089);
+    --strong-box-shadow:rgba(0, 0, 0, 0.466);
+    --off-white-color: #f5f8f9;
+    --off-black-color:rgba(0, 0, 0, 0.5);
+    --darkred-color-hover:#d32f2f;
+    --button-grey:#e9e9e9 ;
+    --hover-button-grey:#e5e8e9;
+    --hover-active-grey:#a5a5a588;
+    --default-font: 'Open Sans';
+}
