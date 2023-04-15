@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import login from './application'
+import application from './application.js'
 Vue.use(Vuex)
 
-export default new Vuex.Store(login)
+export default new Vuex.Store(application)
 
