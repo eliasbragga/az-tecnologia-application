@@ -73,8 +73,8 @@ export default {
   },
   data: () => ({
     form: {
-      inputBind: "eve.holt@reqres.in",
-      passwordBind: "cityslicka",
+      inputBind: "",
+      passwordBind: "",
     },
     loadingField: false,
   }),
