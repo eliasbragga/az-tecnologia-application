@@ -8,7 +8,7 @@ export default {
       candidates: [],
       isClicked: false, // flag para animacao da dashboard
       logout: false, // flag para realizar logout
-      pagination: 1
+      pagination: 1 || ""
     },
     getters: {
       user: state => state.user,
