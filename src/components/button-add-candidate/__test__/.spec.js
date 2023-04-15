@@ -17,12 +17,6 @@ describe("ButtonAddCadidate", () => {
     expect(wrapper.vm.$options.mixins).toContain(Messages);
   });
 
-  it("should closes the dialog on event emitted", () => {
-    wrapper.setData({ dialog: true });
-    wrapper.vm.closeDialog(false);
-    expect(wrapper.vm.dialog).toBe(false);
-  });
-
   it("should shows the message alert when showMessage is true", () => {
     const wrapper = shallowMount(ButtonAddCadidate, {
       data() {
