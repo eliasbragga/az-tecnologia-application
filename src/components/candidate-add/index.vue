@@ -63,7 +63,7 @@ export default {
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
-  color: var(primary-color);
+  color: var(--primary-color);
 }
 
 
