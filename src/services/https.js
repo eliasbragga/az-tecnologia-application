@@ -1,3 +1,3 @@
-const HTTPS = 'https://reqres.in/api'
+const HTTPS = "https://reqres.in/api";
 
-export default HTTPS
+export default HTTPS;

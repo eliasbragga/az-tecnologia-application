@@ -1,7 +1,11 @@
 <template>
   <div class="header_mobile">
     <div class="header_hamburger">
-      <button data-jest="button_open_hamburger" class="btn_hamburger" @click="openHamburger">
+      <button
+        data-jest="button_open_hamburger"
+        class="btn_hamburger"
+        @click="openHamburger"
+      >
         <span class="line_hamburger"></span>
         <span class="line_hamburger"></span>
         <span class="line_hamburger"></span>
@@ -9,8 +13,19 @@
       <div class="dropdown_hamburger">
         <div class="card_hamburger" v-if="hamburgerOptionVisibility">
           <span>Ola, {{ userName }}</span>
-          <button @click="redirectRoute(route.path)" v-for="(route, i) in routes" :key="i" class="btn_candidatos_hamburger">{{ route.meta.name }}</button>
-          <button data-jest="button_logout" class="btn_candidatos_hamburger logout" @click="toGoLogout">
+          <button
+            @click="redirectRoute(route.path)"
+            v-for="(route, i) in routes"
+            :key="i"
+            class="btn_candidatos_hamburger"
+          >
+            {{ route.meta.name }}
+          </button>
+          <button
+            data-jest="button_logout"
+            class="btn_candidatos_hamburger logout"
+            @click="toGoLogout"
+          >
             Logout
           </button>
         </div>
@@ -20,26 +35,26 @@
 </template>
 
 <script>
-import routes from '@/router'
-import { mapGetters, mapMutations } from 'vuex';
+import routes from "@/router";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "InputHamburger",
   data: () => ({
-    routes: routes.options.routes.filter(route => route.meta),
+    routes: routes.options.routes.filter((route) => route.meta),
     hamburgerOptionVisibility: false,
     userName: "Az Tecnologia",
   }),
   computed: {
-    ...mapGetters(['logout'])
+    ...mapGetters(["logout"]),
   },
   methods: {
-    ...mapMutations(['SET_LOGOUT']),
+    ...mapMutations(["SET_LOGOUT"]),
     openHamburger() {
       this.hamburgerOptionVisibility = !this.hamburgerOptionVisibility;
     },
     toGoLogout() {
       this.SET_LOGOUT(true);
-      this.redirectRoute('/login')
+      this.redirectRoute("/login");
     },
     redirectRoute(route) {
       if (this.$router) {

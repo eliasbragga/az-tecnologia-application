@@ -1,10 +1,20 @@
 <template>
-  <div data-jest="toast_container" :class="successReq ? 'success' : 'error'" class="toast" v-if="showMessage">
+  <div
+    data-jest="toast_container"
+    :class="successReq ? 'success' : 'error'"
+    class="toast"
+    v-if="showMessage"
+  >
     <div class="message_toast">
       <span>{{ message }}</span>
     </div>
     <div class="icon_toast">
-      <span data-jest="close_toast" @click="closeToastMessage" class="close_icon">x</span>
+      <span
+        data-jest="close_toast"
+        @click="closeToastMessage"
+        class="close_icon"
+        >x</span
+      >
     </div>
   </div>
 </template>
@@ -19,7 +29,7 @@ export default {
     },
     successReq: {
       required: false,
-      type: Boolean
+      type: Boolean,
     },
     showMessage: {
       required: true,
@@ -39,9 +49,6 @@ export default {
         }, 3000);
       }
     },
-    success() {
-        this.closeToastMessage();
-    }
   },
 };
 </script>

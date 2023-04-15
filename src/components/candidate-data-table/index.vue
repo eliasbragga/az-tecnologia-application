@@ -1,7 +1,7 @@
 <template>
   <div class="table_container">
     <MessageAlert
-    ref="MessageAlert"
+      ref="MessageAlert"
       :showMessage="showMessage"
       :message="messageToast"
       :successReq="successReq"
@@ -98,23 +98,6 @@ export default {
   margin: 0.5rem auto;
   padding: 1rem;
 }
-
-.table_empty_container {
-  flex-direction: column;
-  width: 35%;
-  margin: auto;
-}
-.table_empty_container p {
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 25px;
-  color: #626262;
-}
-.table_empty_container img {
-  margin-bottom: 0.5rem;
-}
-
 .table {
   width: 100%;
   margin: auto;

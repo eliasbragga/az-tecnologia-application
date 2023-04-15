@@ -1,11 +1,6 @@
-import axios from 'axios'
-import HTTPS from './https'
-
+import axios from "axios";
+import HTTPS from "./https";
 
 export function UserRegister(body) {
-    return axios.post(`${HTTPS}/register`, body)
+  return axios.post(`${HTTPS}/register`, body);
 }
-
-
-
-

@@ -21,19 +21,6 @@ export default {
     ActionUser,
     MessageAlert,
   },
-  data: () => ({
-    dialog: false,
-  }),
-  methods: {
-    handleClick() {
-      this.dialog = true;
-    },
-
-    closeDialog(event) {
-      this.dialog = event;
-    },
-  },
-  
 };
 </script>
 
@@ -45,28 +32,5 @@ export default {
   justify-content: start;
   align-items: center;
   padding: 0 2rem;
-}
-
-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 1rem;
-  border-radius: 5px;
-  transition: 0.2s;
-}
-button:hover {
-  border: none;
-  background: #e5e8e9;
-  cursor: pointer;
-}
-
-button span {
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 27px;
-  color: #0067a5;
-  margin-left: 5px;
 }
 </style>

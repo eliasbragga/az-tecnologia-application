@@ -22,7 +22,7 @@ import MessageAlert from "@/components/message-alert/index.vue";
 import Messages from "@/mixins/Messages.js";
 export default {
   name: "AddCandidate",
-  mixins:[Messages],
+  mixins: [Messages],
   components: { MessageAlert },
   data: () => ({}),
 };
@@ -67,12 +67,12 @@ export default {
   color: #0067a5;
 }
 
-@media screen and (min-width: 600px) and ( max-width: 900px)  {
+@media screen and (min-width: 600px) and (max-width: 900px) {
   .table_empty_container {
     width: 60%;
   }
 }
-@media screen and ( max-width: 600px)  {
+@media screen and (max-width: 600px) {
   .table_empty_container {
     width: 90%;
   }

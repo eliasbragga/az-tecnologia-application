@@ -48,7 +48,7 @@ export default {
     hamburgerOptionVisibility: false,
   }),
   computed: {
-    ...mapGetters(['logout'])
+    ...mapGetters(["logout"]),
   },
   methods: {
     ...mapMutations(["SET_LOGOUT"]),
@@ -60,7 +60,7 @@ export default {
     },
     toGoLogout() {
       this.SET_LOGOUT(true);
-      this.redirectRoute('/login')
+      this.redirectRoute("/login");
     },
     redirectRoute(route) {
       if (this.$router) {
@@ -111,32 +111,8 @@ export default {
   align-items: center;
 }
 
-.user_button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.down_arrow_icon {
-  font-size: 13px;
-  color: rgba(70, 70, 70, 0.808);
-}
 .user_icon {
   width: 30px;
-}
-
-.select_logout {
-  background: transparent;
-  width: 20px !important;
-  border: none;
-  margin-right: 0.5rem;
-  cursor: pointer;
-}
-
-.option_logout {
-  background: transparent;
-  border: none;
 }
 
 .dropdown {
@@ -151,10 +127,6 @@ export default {
   margin-right: 1rem;
 }
 
-.active {
-  display: block;
-}
-
 .logout {
   background: transparent;
   color: #ffff;
@@ -167,36 +139,6 @@ export default {
 
 .logout:hover {
   background-color: #d32f2f;
-}
-
-.header_hamburger {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f2f2f2;
-}
-
-.btn_hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  width: 30px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
-
-.line_hamburger {
-  width: 20px;
-  height: 2px;
-  background-color: black;
-  margin: 2px;
-  transition: transform 0.2s ease-in-out;
 }
 
 .card_hamburger {
@@ -269,14 +211,13 @@ export default {
   }
 }
 
-@media screen and (min-width: 600px)  and (max-width: 960px) {
+@media screen and (min-width: 600px) and (max-width: 960px) {
   .sm_960 {
     display: flex;
   }
   .md_flex {
     display: none;
   }
-  
 }
 
 @media screen and (max-width: 600px) {

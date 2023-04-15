@@ -1,7 +1,7 @@
 <template>
   <div>
     <MessageAlert
-      ref="messageAlert" 
+      ref="messageAlert"
       :showMessage="showMessage ? true : false"
       :message="messageToast ? messageToast : ''"
       :successReq="successReq ? true : false"
@@ -39,7 +39,7 @@
           :id="candidate.id"
         />
         <DeleteButton
-        ref="DeleteButton"
+          ref="DeleteButton"
           @messageToast="messageToastHandle"
           :id="candidate.id"
           :name="candidate.first_name"
@@ -101,7 +101,7 @@ export default {
 }
 
 .info span {
-  font-size: 10px
+  font-size: 10px;
 }
 
 .avatar_candidate {
@@ -113,10 +113,6 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.466);
-}
-
-.card_flex {
-  display: flex;
 }
 
 .button_container {
@@ -138,7 +134,7 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-  .info span{
+  .info span {
     font-size: 12px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.322);
   }

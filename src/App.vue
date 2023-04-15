@@ -36,7 +36,7 @@ export default {
     },
     verifyLogged() {
       this.route = this.$router.history.current.name;
-      console.log('isLogged', this.token)
+      console.log("isLogged", this.token);
       return this.route !== "login" && this.token;
     },
   },
@@ -67,12 +67,13 @@ export default {
     this.route = this.$router.history.current.name;
   },
   watch: {
-    route(newValue) {
-      if (newValue === " ") {
-        this.redirectRoute("/login");
-        this.route = "login";
-      }
-    },
+    // route(newValue) {
+    //   console.log(`route`,newValue)
+    //   if (newValue === " ") {
+    //     this.redirectRoute("/login");
+    //     this.route = "login";
+    //   }
+    // },
     logout(newValue) {
       if (newValue) {
         this.toLogout();
@@ -92,7 +93,6 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -124,7 +124,7 @@ a {
 
 @media screen and (min-width: 600px) {
   .app_container {
-  height: 100%;
-}
+    height: 100%;
+  }
 }
 </style>

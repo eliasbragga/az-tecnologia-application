@@ -1,6 +1,6 @@
 <template>
   <div class="header_container">
-    <UserDataTable  ref="UserDataTable"/>
+    <UserDataTable ref="UserDataTable" />
   </div>
 </template>
 
@@ -34,11 +34,6 @@ export default {
 </script>
 
 <style scoped>
-.home_container {
-  height: 100%;
-  display: flex;
-}
-
 .header_container {
   width: 100%;
   height: 97%;

@@ -27,8 +27,8 @@ const Messages = {
     // funcao emitida por popup
     messageToastHandle(event) {
       (this.showMessage = event?.showMessage),
-      (this.messageToast = event?.messageToast),
-      (this.successReq = event?.successReq);
+        (this.messageToast = event?.messageToast),
+        (this.successReq = event?.successReq);
       if (event?.successReq === true) {
         this.getCandidates(this?.pagination);
       }
