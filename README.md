@@ -1,4 +1,8 @@
-# project
+# Introduction 😀
+### Project developed to assist in the search for candidates for job openings. The application has several features such as adding, editing and deleting candidates. Furthermore, the application is fully responsive allowing the user to use it on desktop and mobile.
+
+#
+# project 💻
 
 ## Project setup
 ```
@@ -15,11 +19,26 @@ npm run serve
 npm run build
 ```
 
-### Run tests
+### Unit tests
 ```
-npm run test:e2e
+npm run test
+```
 
+### Login data
 ```
+Email: eve.holt@reqres.in
+Senha: 123456
+```
+### Register data
+```
+Email: eve.holt@reqres.in
+Senha: 123456
+```
+
+# Attention user!! 🛑
+## all application data is mocked from the api https://reqres.in/
+#
+
 ## Screens UI
 **Login**
 

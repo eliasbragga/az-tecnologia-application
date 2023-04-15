@@ -1,9 +1,10 @@
 <template>
   <div>
     <MessageAlert
-      :showMessage="showMessage"
-      :message="messageToast"
-      :successReq="successReq"
+      ref="messageAlert" 
+      :showMessage="showMessage ? true : false"
+      :message="messageToast ? messageToast : ''"
+      :successReq="successReq ? true : false"
       @closeToastMessage="closeToastMessage"
     />
     <div class="card_container" v-for="(candidate, i) in candidates" :key="i">
@@ -32,11 +33,13 @@
       </div>
       <div class="button_container">
         <ActionUser
+          ref="ActionUser"
           @messageToast="messageToastHandle"
           :edit="true"
           :id="candidate.id"
         />
         <DeleteButton
+        ref="DeleteButton"
           @messageToast="messageToastHandle"
           :id="candidate.id"
           :name="candidate.first_name"
@@ -50,11 +53,11 @@
 import MessageAlert from "@/components/message-alert/index.vue";
 import DeleteButton from "@/components/popups/alert-delete.vue";
 import ActionUser from "@/components/popups/action-candidate.vue";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 import { mapGetters } from "vuex";
 export default {
   name: "CardCandidateMobile",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     DeleteButton,
     ActionUser,
@@ -64,7 +67,6 @@ export default {
   computed: {
     ...mapGetters(["candidates"]),
   },
-  methods: {},
 };
 </script>
 
@@ -136,8 +138,9 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-  .info {
-    font-size: 90%;
+  .info span{
+    font-size: 12px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.322);
   }
 }
 </style>

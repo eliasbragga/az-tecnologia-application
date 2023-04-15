@@ -20,6 +20,7 @@
           <div class="card_hamburger" v-if="hamburgerOptionVisibility">
             <span>Ola, {{ userName }}</span>
             <button
+              data-jest="button_logout_dropdown"
               class="btn_candidatos_hamburger logout_input"
               @click="toGoLogout"
             >
@@ -35,17 +36,20 @@
 
 <script>
 import Inputhamburger from "@/components/input-hamburger/index.vue";
-import { mapMutations } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import { mapGetters, mapMutations } from "vuex";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Header",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: { Inputhamburger },
   data: () => ({
     userName: "Az Tecnologia",
     dropdown: false,
     hamburgerOptionVisibility: false,
   }),
+  computed: {
+    ...mapGetters(['logout'])
+  },
   methods: {
     ...mapMutations(["SET_LOGOUT"]),
     openDropdown() {

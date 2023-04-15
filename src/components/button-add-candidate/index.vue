@@ -13,10 +13,10 @@
 <script>
 import MessageAlert from "@/components/message-alert/index.vue";
 import ActionUser from "@/components/popups/action-candidate.vue";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "ButtonAddCadidate",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     ActionUser,
     MessageAlert,

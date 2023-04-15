@@ -9,9 +9,9 @@
     <div>
       <img class="logo" src="@/assets/logo-light.png" alt="logo da empresa" />
     </div>
-    <div v-for="(route, i) in routes" :key="i" style="margin-bottom: 5px;">
+    <div v-for="(route, i) in routes" :key="i" style="margin-bottom: 5px">
       <button @click="redirectRoute(route.path)">
-        <div class="text_button_container" >
+        <div class="text_button_container">
           <img src="@/assets/Vector.png" alt="icone do botao da dashboard" />
           <span v-if="!isClicked">{{ route.meta.name }}</span>
         </div>
@@ -31,15 +31,15 @@
 </template>
 
 <script>
-import routes from '@/router'
+import routes from "@/router";
 import { mapGetters, mapMutations } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Dashboard",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {},
   data: () => ({
-    routes: routes.options.routes.filter(route => route.meta)
+    routes: routes.options.routes.filter((route) => route.meta),
   }),
   computed: {
     ...mapGetters(["isClicked"]),
@@ -53,14 +53,11 @@ export default {
       if (this.$router) {
         this.$router.replace(route).catch(() => {});
       }
-      if(this.isClicked) {
-        this.changeVisibilityDashboard()
+      if (this.isClicked) {
+        this.changeVisibilityDashboard();
       }
     },
   },
-  mounted() {
-    console.log('route', this.routes)
-  }
 };
 </script>
 

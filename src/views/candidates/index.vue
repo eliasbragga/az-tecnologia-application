@@ -1,31 +1,25 @@
 <template>
   <div class="header_container">
-    <UserDataTable :total="total" @changePagination="changePagination"/>
+    <UserDataTable  ref="UserDataTable"/>
   </div>
 </template>
 
 <script>
 import UserDataTable from "@/components/candidate-data-table/index.vue";
 import { mapGetters, mapMutations } from "vuex";
-import MyMixin from "@/mixins/MyMixin.js";
+import Messages from "@/mixins/Messages.js";
 export default {
   name: "Candidates",
-  mixins: [MyMixin],
+  mixins: [Messages],
   components: {
     UserDataTable,
   },
-  data: () => ({
-    total: 0,
-  }),
+  data: () => ({}),
   computed: {
-    ...mapGetters(["pagination"]),
+    ...mapGetters(["pagination", "logout"]),
   },
   methods: {
     ...mapMutations(["SET_CANDIDATES", "SET_LOGOUT"]),
-    changePagination() {
-      this.page = this.pagination;
-      this.getCandidates(this.pagination);
-    },
   },
   mounted() {
     this.SET_LOGOUT(false);
@@ -47,6 +41,6 @@ export default {
 
 .header_container {
   width: 100%;
-  height: 97%; 
+  height: 97%;
 }
 </style>

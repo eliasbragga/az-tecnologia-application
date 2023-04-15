@@ -1,15 +1,14 @@
 import { getCandidates } from "@/services/candidates";
 import { mapGetters, mapMutations } from "vuex";
-const MyMixin = {
+const Messages = {
   data: () => ({
     showMessage: false,
     successReq: false,
     messageToast: "",
-    widthWindow: window.innerWidth
-
+    widthWindow: window.innerWidth,
   }),
   computed: {
-    ...mapGetters(['pagination'])
+    ...mapGetters(["pagination"]),
   },
   methods: {
     ...mapMutations(["SET_CANDIDATES"]),
@@ -27,11 +26,17 @@ const MyMixin = {
 
     // funcao emitida por popup
     messageToastHandle(event) {
-      (this.messageToast = event.messageToast),
-      (this.successReq = event.successReq),
-      (this.showMessage = event.showMessage);
-      if(event.successReq === true)
-      this.getCandidates(this.pagination);
+      (this.showMessage = event?.showMessage),
+      (this.messageToast = event?.messageToast),
+      (this.successReq = event?.successReq);
+      if (event?.successReq === true) {
+        this.getCandidates(this?.pagination);
+      }
+      return {
+        showMessage: event?.showMessage || false,
+        messageToast: event?.messageToast || "",
+        successReq: event?.successReq || false,
+      };
     },
 
     closeToastMessage(event) {
@@ -49,4 +54,4 @@ const MyMixin = {
   },
 };
 
-export default MyMixin;
+export default Messages;

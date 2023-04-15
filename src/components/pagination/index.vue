@@ -1,10 +1,10 @@
 <template>
   <div class="pagination">
     <span style="margin-right: .5rem">{{pagination}} de 2</span>
-    <a @click="changePagination(1)" :class="pagination === 1 ? 'active' : ''"
+    <a data-jest="pagination_1" @click="changePagination(1)" :class="pagination === 1 ? 'active' : ''"
       >1</a
     >
-    <a @click="changePagination(2)" :class="pagination === 2 ? 'active' : ''"
+    <a data-jest="pagination_2" @click="changePagination(2)" :class="pagination === 2 ? 'active' : ''"
       >2</a
     >
   </div>
