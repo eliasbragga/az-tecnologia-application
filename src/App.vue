@@ -67,13 +67,6 @@ export default {
     this.route = this.$router.history.current.name;
   },
   watch: {
-    // route(newValue) {
-    //   console.log(`route`,newValue)
-    //   if (newValue === " ") {
-    //     this.redirectRoute("/login");
-    //     this.route = "login";
-    //   }
-    // },
     logout(newValue) {
       if (newValue) {
         this.toLogout();
@@ -87,11 +80,13 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+@import '@/style/index.css';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--default-font);
 }
 
 #app {
