@@ -65,7 +65,7 @@
 import MessageAlert from "@/components/message-alert/index.vue";
 import DeleteButton from "@/components/popups/alert-delete.vue";
 import ActionUser from "@/components/popups/action-candidate.vue";
-import CardMobile from "@/components/card-candidate-mobile/index.vue";
+import CardMobile from "@/components/candidate-card-mobile/index.vue";
 import Pagination from "@/components/pagination/index.vue";
 import { mapGetters } from "vuex";
 import Messages from "@/mixins/Messages.js";
