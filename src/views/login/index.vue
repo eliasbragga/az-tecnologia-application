@@ -39,7 +39,10 @@
           />
         </div>
         <div class="input_container">
-          <span data-jest="span_user_register" @click="redirectRoute('/register')" class="register"
+          <span
+            data-jest="span_user_register"
+            @click="redirectRoute('/register')"
+            class="register"
             >Registrar-se</span
           >
         </div>
