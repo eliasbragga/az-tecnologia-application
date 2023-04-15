@@ -1,15 +1,14 @@
 <template>
   <div class="table_container">
-    <ActionUser @messageToast="messageToastHandle" :edit="false" v-show="false" />
     <MessageAlert
-      :showMessage="showMessage"
-      :message="messageToast"
-      :successReq="successReq"
+      :showMessage="showMessage ? true : false"
+      :message="messageToast ? messageToast : ''"
+      :successReq="successReq ? true : false"
       @closeToastMessage="closeToastMessage"
     />
     <div class="table_empty_container">
       <img src="@/assets/Vector (5).png" alt="icone no centro da tela vazia" />
-      <p>
+      <p data-jest="text_empyt_candidate">
         Você nao possui nenhum candidato adicionado recentemente, clique no
         botão
         <span class="button_add_span">Adicionar</span> para começar.
@@ -20,12 +19,11 @@
 
 <script>
 import MessageAlert from "@/components/message-alert/index.vue";
-import ActionUser from "@/components/popups/action-candidate.vue";
 import Messages from "@/mixins/Messages.js";
 export default {
   name: "AddCandidate",
   mixins:[Messages],
-  components: { ActionUser, MessageAlert },
+  components: { MessageAlert },
   data: () => ({}),
 };
 </script>
