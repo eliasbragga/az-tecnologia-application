@@ -90,10 +90,10 @@ export default {
 .table_container {
   width: 97%;
   min-height: 97%;
-  background: #ffffff;
+  background: var(--white-color);
   overflow: scroll;
   overflow-x: hidden;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px var(--box-shadow);
   border-radius: 6px;
   margin: 0.5rem auto;
   padding: 1rem;
@@ -110,21 +110,20 @@ table {
 }
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   padding: 10px;
   overflow: hidden;
   text-align: start;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black-color);
 }
 
 th {
-  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
-  color: #0067a5;
+  color: var(--primary-color);
 }
 
 .actions_table {

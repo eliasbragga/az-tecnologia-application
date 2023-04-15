@@ -70,8 +70,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f2f2f2;
+  padding: 8px;
+  background-color: var(--off-white-color);
 }
 
 .btn_hamburger {
@@ -91,7 +91,7 @@ export default {
 .line_hamburger {
   width: 20px;
   height: 2px;
-  background-color: black;
+  background-color: var(--black-color);
   margin: 2px;
   transition: transform 0.2s ease-in-out;
 }
@@ -119,21 +119,20 @@ export default {
   top: 40px;
   left: -70px;
   width: 200px;
-  background-color: #f2f2f2;
+  background-color: var(--off-white-color);
   padding: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px var(--strong-box-shadow);
   z-index: 1;
 }
 
 .card_hamburger span {
   margin-bottom: 1rem;
-  font-family: "Open Sans";
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.644);
+  color: var(--light-grey);
 }
 
 .btn_candidatos_hamburger {
-  background-color: #0067a5;
+  background-color: var(--primary-color);
   color: white;
   padding: 8px 12px;
   border: none;
@@ -143,6 +142,6 @@ export default {
   margin-bottom: 0.4rem;
 }
 .logout {
-  background-color: rgba(255, 0, 0, 0.76) !important;
+  background-color: var(--darkred-color-hover)!important;
 }
 </style>

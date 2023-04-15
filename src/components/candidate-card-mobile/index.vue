@@ -73,14 +73,14 @@ export default {
 <style scoped>
 .card_container {
   border-radius: 5px;
-  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.164);
+  box-shadow: 2px 3px 4px var(--box-shadow);
   max-width: 70%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;
   padding: 0.3rem 1rem;
-  background: #0066a56b;
+  background: var(--background-card);
   margin-bottom: 1rem;
   position: relative;
 }
@@ -89,8 +89,7 @@ export default {
   display: flex;
   justify-content: start;
   align-items: center;
-  font-family: "Open Sans";
-  color: #000;
+  color: var(--color-black);
   font-weight: 400;
   text-transform: uppercase;
   width: 100% !important;
@@ -112,7 +111,7 @@ export default {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.466);
+  box-shadow: 0px 2px 4px var(--strong-box-shadow);
 }
 
 .button_container {

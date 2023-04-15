@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .button_container {
   height: 70px;
-  background: #f5f8f9;
+  background: var(--off-white-color);
   display: flex;
   justify-content: start;
   align-items: center;

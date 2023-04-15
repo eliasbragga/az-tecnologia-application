@@ -63,21 +63,19 @@ export default {
 
 <style scoped>
 .dashboard_container_max_width {
-  background: red;
   width: 200px;
   height: calc(100% + 50px);
-  background: #0067a5;
+  background: var(--primary-color);
   box-shadow: 0px 0px 5px;
   padding: 3rem 0;
   position: relative;
   transition: width 0.5s ease;
 }
 .dashboard_container_min_width {
-  background: red;
   width: 100px;
   transition: width 0.5s ease;
   height: calc(100% + 50px);
-  background: #0067a5;
+  background: var(--primary-color);
   box-shadow: 0px 0px 5px;
   padding: 3rem 0;
   position: relative;
@@ -104,10 +102,10 @@ export default {
 }
 
 button {
-  background: #005c94;
+  background: var(--primary-color);
   border: none;
-  border-top: 1px rgba(255, 255, 255, 0.384) solid;
-  border-bottom: 1px rgba(255, 255, 255, 0.384) solid;
+  border-top: 1px  solid var(--border-light-grey);
+  border-bottom: 1px solid var(--border-light-grey);
   width: 100%;
   padding: 1rem 0;
   display: flex;
@@ -117,7 +115,7 @@ button {
   transition: 0.2s;
 }
 button:hover {
-  background: #015183;
+  background: var(--primary-color-hover);
   transition: 0.2s;
 }
 
@@ -130,11 +128,10 @@ button:hover {
 }
 
 .text_button_container span {
-  font-family: "Open Sans";
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
-  color: #ffffff;
+  color: var(--white-color);
   text-align: center;
   margin-left: 8px;
 }
@@ -150,12 +147,11 @@ button:hover {
   height: 16.5px;
 }
 .button_close_container span {
-  font-family: "Open Sans";
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   align-items: start;
-  color: #ffffff94;
+  color: var(--light-grey-hover);
   margin-left: 0.5rem !important;
 }
 

@@ -27,7 +27,7 @@ export default {
 <style scoped>
 footer {
   height: 50px;
-  background: #f7f8fa;
+  background: var(--off-white-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,12 +35,11 @@ footer {
   transition: width 0.5s ease;
 }
 span {
-  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  color: rgba(98, 98, 98, 0.8);
+  color: var(--light-grey);
 }
 .min_width {
   width: calc(100% - 170px) !important;

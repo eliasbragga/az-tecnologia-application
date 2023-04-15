@@ -154,14 +154,14 @@ export default {
 }
 
 .login_card {
-  background: #ffffff;
+  background: var(--white-color);
   width: 450px;
   height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4.5px 3.8px rgba(0, 0, 0, 0.089);
+  box-shadow: 0px 4.5px 3.8px var(--box-shadow);
   border-radius: 5px;
 }
 
@@ -177,8 +177,7 @@ export default {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
-  color: #8e8e8e;
+  color: var(--dark-grey);
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -195,31 +194,29 @@ p {
 }
 .input_container label {
   font-size: 13px;
-  font-family: "Open Sans";
   font-weight: 600;
   font-size: 13px;
   line-height: 18px;
-  color: #626262;
+  color: var(--light-grey);
 }
 .input_container input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black-color);
 }
 .input_container input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black-color);
   font-size: 15px;
   padding: 0.8rem;
   font-weight: 200;
 }
 .input_container input::placeholder {
-  color: #00000059;
+  color: var(--placeholder-color);
   font-size: 15px;
   line-height: 20px;
   font-weight: 400;
-  font-family: "Open Sans";
 }
 .input_container input:focus {
   outline: none;
@@ -231,8 +228,7 @@ p {
   height: 38px;
   border-radius: 4px;
   border: none;
-  color: #ffffff;
-  font-family: "Open Sans";
+  color: var(--white-color);
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -241,11 +237,11 @@ p {
 }
 .active {
   transition: 0.3s;
-  background: #0067a5;
+  background: var(--primary-color);
 }
 .active:hover {
   transition: 0.3s;
-  background: #004d7c;
+  background: var(--primary-color-hover);
 }
 .inactive {
   transition: 0.2s;
@@ -254,13 +250,13 @@ p {
 
 .register {
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.582);
+  color: var(--dark-grey);
   cursor: pointer;
   transition: 0.3s;
 }
 .register:hover {
   transition: 0.3s;
-  color: rgba(0, 0, 0, 0.774);
+  color: var(--light-grey);
 }
 @media screen and (max-width: 600px) {
   .login_container {

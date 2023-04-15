@@ -218,9 +218,9 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
+  background-color: var(--white-color);
+  border: 1px solid var(--dark-grey);
+  box-shadow: 0 2px 4px var(--box-shadow);
   width: 400px;
   z-index: 9999;
   border-radius: 6px;
@@ -244,7 +244,7 @@ export default {
   right: 10px;
   font-size: 25px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--white-color);
   cursor: pointer;
   font-weight: 200;
   margin-top: 5px;
@@ -257,7 +257,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--off-black-color);
   z-index: 9998;
 }
 
@@ -265,13 +265,12 @@ export default {
   text-align: start;
   border-radius: 6px 6px 0px 0px;
   padding: 1rem 1.5rem;
-  background: #0067a5;
-  font-family: "Open Sans";
+  background: var(--primary-color);
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;
-  color: white;
+  color: var(--white-color);
 }
 
 .data_container {
@@ -288,31 +287,29 @@ export default {
 }
 .input_container label {
   font-size: 13px;
-  font-family: "Open Sans";
   font-weight: 600;
   font-size: 13px;
-  color: #626262;
+  color: var(--light-grey);
 }
 .input_container input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black-color);
   margin-bottom: 15px;
 }
 .input_container input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black-color);
   font-size: 15px;
   padding: 0.8rem;
   font-weight: 200;
 }
 .input_container input::placeholder {
-  color: #00000059;
+  color: var(--placeholder-color);
   font-size: 15px;
   line-height: 20px;
   font-weight: 400;
-  font-family: "Open Sans";
 }
 .input_container input:focus {
   outline: none;
@@ -323,8 +320,7 @@ export default {
   height: 38px;
   border-radius: 4px;
   border: none;
-  color: #ffffff;
-  font-family: "Open Sans";
+  color: var(--white-color);
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -347,20 +343,19 @@ export default {
   transition: 0.2s;
 }
 .button_add_user:hover {
-  background: #e5e8e9;
+  background: var(--hover-button-grey);
 }
 .button_add_user:hover:active {
   border: none;
-  background: #a3a3a3;
+  background: var(--hover-active-grey);
   cursor: pointer;
 }
 
 .button_add_user span {
-  font-family: "Open Sans";
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
-  color: #0067a5;
+  color: var(--primary-color);
   margin-left: 5px;
 }
 
@@ -373,19 +368,17 @@ export default {
   transition: 0.2s;
 }
 .button_add_user_mobile:hover {
-  background: #e5e8e9;
+  background: var(--hover-button-grey);
 }
 .button_add_user_mobile:hover:active {
-  background: #e5e8e9;
-  background: #a3a3a3;
+  background: var(--hover-active-grey);
 }
 
 .button_add_user_mobile span {
-  font-family: "Open Sans";
   font-weight: 700;
   font-size: 14px;
   line-height: 27px;
-  color: #0067a5;
+  color: var(--primary-color);
   margin-left: 5px;
 }
 
@@ -396,32 +389,32 @@ export default {
 }
 
 .send_button_color {
-  background: #0067a5;
+  background: var(--primary-color);
   transition: 0.3s;
 }
 .send_button_color:hover {
   transition: 0.3s;
-  background: #015991;
+  background: var(--primary-color-hover);
 }
 .send_button_color:hover:active {
-  background: #014169;
+  background: var(--primary-color-active);
 }
 .back_button_color {
   background: transparent;
-  border: 1px solid #949494 !important;
-  color: #949494;
+  border: 1px solid var(--border-light-grey) !important;
+  color: var(--border-light-grey);
   transition: 0.3s;
 }
 .back_button_color:hover {
   transition: 0.3s;
-  background: #e9e9e9 !important;
+  background: var(--hover-button-grey) !important;
 }
 .back_button_color:hover:active {
-  background: #cfcfcf !important;
+  background: var(--hover-active-grey) !important;
 }
 
 .asterisk {
-  color: red;
+  color: var(--darkred-color-hover);
 }
 
 hr {
@@ -431,7 +424,7 @@ hr {
 
 .inactive {
   transition: 0.2s;
-  background: #8e8e8e !important;
+  background: var(--light-grey) !important;
 }
 
 @media screen and (max-width: 960px) {

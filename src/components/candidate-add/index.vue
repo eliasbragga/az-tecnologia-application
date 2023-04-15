@@ -35,10 +35,10 @@ export default {
   align-items: center;
   width: 97%;
   height: 100vh;
-  background: #ffffff;
+  background: var(--white-color);
   overflow: hidden;
   overflow-x: hidden;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px var(--box-shadow);
   border-radius: 6px;
   margin: 0.5rem auto;
   padding: 1rem;
@@ -50,11 +50,10 @@ export default {
   margin: auto;
 }
 .table_empty_container p {
-  font-family: "Open Sans";
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-  color: #626262;
+  color: var(--light-grey);
 }
 .table_empty_container img {
   margin-bottom: 0.5rem;
@@ -64,8 +63,9 @@ export default {
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
-  color: #0067a5;
+  color: var(primary-color);
 }
+
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
   .table_empty_container {

@@ -17,11 +17,11 @@
         {{ userName }}
         <div class="dropdown">
           <button class="dropbtn" @click="openDropdown">&#9660;</button>
-          <div class="card_hamburger" v-if="hamburgerOptionVisibility">
+          <div class="dropdown_card" v-if="hamburgerOptionVisibility">
             <span>Ola, {{ userName }}</span>
             <button
               data-jest="button_logout_dropdown"
-              class="btn_candidatos_hamburger logout_input"
+              class="btn_candidatos_dropdown logout_input"
               @click="toGoLogout"
             >
               Logout
@@ -81,7 +81,7 @@ export default {
 .header_container {
   height: 70px;
   width: 100%;
-  background: #ffff;
+  background: var(--white-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,14 +95,13 @@ export default {
 }
 
 .header_text p {
-  font-family: "Open Sans";
   font-weight: 700;
   font-size: 22px;
-  color: #0067a5;
+  color: var(--primary-color);
 }
 .header_text span {
   margin-left: 1rem;
-  color: #626262;
+  color: var(--light-grey);
 }
 
 .header__info_user {
@@ -127,54 +126,38 @@ export default {
   margin-right: 1rem;
 }
 
-.logout {
-  background: transparent;
-  color: #ffff;
-  border: none;
-  cursor: pointer;
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.logout:hover {
-  background-color: #d32f2f;
-}
-
-.card_hamburger {
+.dropdown_card {
   position: absolute;
   display: block;
   top: 40px;
   left: -70px;
   width: 200px;
-  background-color: #f2f2f2;
+  background-color: var(--white-color);
   padding: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px var(--box-shadow);
   z-index: 1;
 }
-.card_hamburger span {
+.dropdown_card span {
   margin-bottom: 1rem;
-  font-family: "Open Sans";
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.644);
+  color: var(--light-grey);
 }
 
-.card_hamburger {
+.dropdown_card {
   position: absolute;
   display: flex;
   flex-direction: column;
   top: 40px;
   left: -120px;
   width: 200px;
-  background-color: #f2f2f2;
+  background-color: var(--off-white-color);
   padding: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px var(--strong-box-shadow);
   z-index: 1;
 }
 
-.btn_candidatos_hamburger {
-  background-color: #0067a5;
-  color: white;
+.btn_candidatos_dropdown {
+  color: var(--white-color);
   padding: 8px 12px;
   border: none;
   border-radius: 4px;
@@ -183,7 +166,7 @@ export default {
 }
 
 .logout_input {
-  background-color: rgba(255, 0, 0, 0.76) !important;
+  background-color: var(--darkred-color-hover) !important;
 }
 
 .header_mobile {

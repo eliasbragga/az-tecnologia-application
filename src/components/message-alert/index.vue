@@ -56,7 +56,7 @@ export default {
 <style scoped>
 .toast_container {
   display: flex;
-  background: red;
+  background: var(--error-color);
 }
 .toast {
   position: fixed;
@@ -64,7 +64,7 @@ export default {
   right: 3%;
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.212);
+  box-shadow: 0px 5px 6px var(--box-shadow);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -88,27 +88,25 @@ export default {
 }
 
 .success {
-  background-color: #53a653;
+  background-color: var(--success-color);
 }
 
 .error {
-  background-color: red;
+  background-color: var(--error-color);
 }
 
 .message_toast {
-  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
-  color: #ffffff;
+  color: var(--white-color);
   width: 90%;
 }
 .icon_toast {
   text-align: end;
   font-size: 17px;
-  color: #ffffff;
-  font-family: "Open Sans";
+  color: var(--white-color);
   font-style: normal;
   font-weight: 400;
   padding-left: 0.5rem;

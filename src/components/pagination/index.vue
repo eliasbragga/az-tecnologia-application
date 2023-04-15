@@ -45,19 +45,19 @@ export default {
 
 .pagination a {
   cursor: pointer;
-  color: black;
+  color: var(--black-color);
   float: left;
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-light-grey);
   margin: 0 4px;
 }
 
 .pagination a.active {
-  background: #0067a5;
+  background: var(--primary-color);
   color: white;
-  border: 1px solid #0067a5;
+  border: 1px solid var(--primary-color);
 }
 
 .pagination a:hover:not(.active) {

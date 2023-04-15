@@ -100,9 +100,9 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
+  background-color: var(--white-color);
+  border: 1px solid var(--dark-grey);
+  box-shadow: 0 2px 4px var(--box-shadow);
   width: 400px;
   z-index: 9999;
   border-radius: 6px;
@@ -119,15 +119,13 @@ export default {
     opacity: 1;
   }
 }
-
-/* Estilos para o botão de fechar */
 .close_dialog {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 25px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--white-color);
   cursor: pointer;
   font-weight: 200;
   margin-top: 5px;
@@ -140,7 +138,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--off-black-color);
   z-index: 9998;
 }
 
@@ -148,8 +146,7 @@ export default {
   text-align: start;
   border-radius: 6px 6px 0px 0px;
   padding: 1rem 1.5rem;
-  background: #0067a5;
-  font-family: "Open Sans";
+  background: var(--primary-color);
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -169,7 +166,6 @@ export default {
   gap: 15px;
 }
 .data_container p {
-  font-family: "Open Sans";
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -180,8 +176,7 @@ export default {
   height: 38px;
   border-radius: 4px;
   border: none;
-  color: #ffffff;
-  font-family: "Open Sans";
+  color: var(--white-color);
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -197,31 +192,31 @@ export default {
   padding: 0px 1rem;
 }
 .cancel_button_color {
-  background: #0067a5;
+  background: var(--primary-color);
   transition: 0.3s;
 }
 .cancel_button_color:hover {
   transition: 0.3s;
-  background: #005081;
+  background: var(--primary-color-hover);
 }
 .cancel_button_color:hover:active {
-  background: #003a5e;
+  background: var(--primary-color-active);
 }
 .delete_button_color {
   background: transparent;
-  border: 1px solid #949494 !important;
-  color: #949494;
+  border: 1px solid var(--border-light-grey)  !important;
+  color: var(--border-light-grey);
   transition: 0.3s;
 }
 
 .delete_button_color:hover {
   transition: 0.3s;
-  background: #dddddd;
-  border: 1px solid #949494 !important;
-  color: #949494;
+  background: var(--hover-button-grey);
+  border: 1px solid var(--light-grey) !important;
+  color: var(--light-grey);
 }
 .delete_button_color:hover:active {
-  background: #979797;
+  background: var(--hover-active-grey) ;
 }
 
 .user_name {
