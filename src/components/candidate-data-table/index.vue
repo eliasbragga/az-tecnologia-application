@@ -1,54 +1,56 @@
 <template>
   <div class="table_container">
     <MessageAlert
+    ref="MessageAlert"
       :showMessage="showMessage"
       :message="messageToast"
       :successReq="successReq"
       @closeToastMessage="closeToastMessage"
     />
-   
-    <Pagination class="md_flex"/>
-    <div class="full_container">
-    <div class="table sm_960_block">
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 10%">#</th>
-            <th style="width: 30%">Name</th>
-            <th style="width: 50%;">E-mail</th>
-            <th style="width: 5%">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(candidate, i) in candidates" :key="i">
-            <td>{{ candidate.id }}</td>
-            <td>{{ candidate.first_name }}</td>
-            <td class="user_image">
-              <img :src="candidate.avatar" alt="icone"/>
-              <span>{{ candidate.email }}</span>
-            </td>
-            <td>
-              <div class="actions_table">
-                <ActionUser
-                  @messageToast="messageToastHandle"
-                  :edit="true"
-                  :id="candidate.id"
-                />
-                <DeleteButton
-                  @messageToast="messageToastHandle"
-                  :id="candidate.id"
-                  :name="candidate.first_name"
-                />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <Pagination class="sm_960" />
-    <CardMobile class="md_block" />
-  </div>
 
+    <Pagination class="md_flex" ref="Pagination" />
+    <div class="full_container">
+      <div class="table sm_960_block">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 10%">#</th>
+              <th style="width: 30%">Name</th>
+              <th style="width: 50%">E-mail</th>
+              <th style="width: 5%">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(candidate, i) in candidates" :key="i">
+              <td>{{ candidate.id }}</td>
+              <td>{{ candidate.first_name }}</td>
+              <td class="user_image">
+                <img :src="candidate.avatar" alt="icone" />
+                <span>{{ candidate.email }}</span>
+              </td>
+              <td>
+                <div class="actions_table">
+                  <ActionUser
+                    ref="ActionUser"
+                    @messageToast="messageToastHandle"
+                    :edit="true"
+                    :id="candidate.id"
+                  />
+                  <DeleteButton
+                    ref="DeleteButton"
+                    @messageToast="messageToastHandle"
+                    :id="candidate.id"
+                    :name="candidate.first_name"
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <Pagination class="sm_960" />
+      <CardMobile class="md_block" ref="CardMobile" />
+    </div>
     <MessageAlert
       :showMessage="showMessage"
       :message="messageToast"
@@ -79,12 +81,7 @@ export default {
   },
   data: () => ({}),
   computed: {
-    ...mapGetters(["candidates", "pagination"]),
-  },
-  methods: {
-    changePagination(event) {
-      this.$emit("changePagination");
-    },
+    ...mapGetters(["candidates"]),
   },
 };
 </script>
@@ -116,14 +113,6 @@ export default {
 }
 .table_empty_container img {
   margin-bottom: 0.5rem;
-}
-
-.button_add_span {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 27px;
-  color: #0067a5;
-  cursor: pointer;
 }
 
 .table {
@@ -167,46 +156,6 @@ th {
   margin-right: 10px;
 }
 
-.edit_button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.pagination {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-bottom: 0.5rem;
-}
-
-.pagination a {
-  cursor: pointer;
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  border: 1px solid #ddd;
-  margin: 0 4px;
-}
-
-.pagination a.active {
-  background: #0067a5;
-  color: white;
-  border: 1px solid #0067a5;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
-
-.sm_600 {
-  display: none;
-}
-
 .sm_960 {
   display: flex;
 }
@@ -223,7 +172,7 @@ th {
 }
 
 .full_container {
-  max-width: 1700px; 
+  max-width: 1700px;
   margin: auto;
 }
 
@@ -244,7 +193,6 @@ th {
   .user_image img {
     width: 7% !important;
   }
-  
 }
 
 @media screen and (max-width: 600px) {
@@ -259,11 +207,9 @@ th {
     display: none;
   }
   .sm_960 {
-    display: none
+    display: none;
   }
-
 }
-
 
 @media screen and (min-width: 960px) {
   .table_container {
