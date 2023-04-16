@@ -29,6 +29,7 @@ const routes = [
     component: addCandidate,
     meta: {
       name: "Recentes",
+      requiresAuth: true,
     },
   },
   {
@@ -37,6 +38,7 @@ const routes = [
     component: Candidates,
     meta: {
       name: "Candidatos",
+      requiresAuth: true,
     },
   },
 ];
@@ -45,6 +47,24 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  console.log(next);
+  const token = sessionStorage.getItem("token");
+
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (!token) {
+      next({
+        path: "/login",
+        query: { redirect: to.fullPath },
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
